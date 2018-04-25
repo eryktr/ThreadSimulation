@@ -10,11 +10,11 @@
 
 #simulationPane
 {
-    -fx-pref-width: 800;
-    -fx-pref-height: 600;
+    -fx-pref-width: 800px;
+    -fx-pref-height: 600px;
 }
 
 #parametersLabel
 {
-    -fx-font-size: 30;
+    -fx-font-size: 30px;
 }
