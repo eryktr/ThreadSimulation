@@ -1,0 +1,20 @@
+.leftGrid
+{
+    -fx-font-size: 20px;
+}
+.leftGrid .text-field
+{
+    -fx-pref-width: 100px;
+}
+
+
+#simulationPane
+{
+    -fx-pref-width: 800;
+    -fx-pref-height: 600;
+}
+
+#parametersLabel
+{
+    -fx-font-size: 30;
+}
