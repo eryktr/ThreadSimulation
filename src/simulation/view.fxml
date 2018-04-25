@@ -8,11 +8,15 @@
 <?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
 <?import javafx.scene.layout.Pane?>
-<BorderPane fx:controller="simulation.Controller" xmlns:fx="http://javafx.com/fxml">
+<BorderPane fx:controller="simulation.Controller" xmlns:fx="http://javafx.com/fxml" >
     <padding>
         <Insets top="10" bottom="10" left="10" right="10"/>
 
     </padding>
+
+    <BorderPane.margin>
+        <Insets left="20" />
+    </BorderPane.margin>
 
     <stylesheets>
         <URL value="@style.css"/>
@@ -41,9 +45,13 @@
     </left>
 
     <center>
-        <Pane fx:id="simulationPane">
+        <GridPane fx:id="simulationGridPane">
+            <BorderPane.margin>
+                <Insets left="20" />
+            </BorderPane.margin>
 
-        </Pane>
+
+        </GridPane>
     </center>
 
 </BorderPane>

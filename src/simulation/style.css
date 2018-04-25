@@ -8,10 +8,11 @@
 }
 
 
-#simulationPane
+#simulationGridPane
 {
-    -fx-pref-width: 800px;
-    -fx-pref-height: 600px;
+
+    -fx-vgap: 10px;
+    -fx-hgap: 10px;
 }
 
 #parametersLabel

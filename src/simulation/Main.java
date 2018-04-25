@@ -14,6 +14,7 @@ public class Main extends Application {
         primaryStage.setTitle("Simulation");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        primaryStage.setMaximized(true);
     }
 
 
