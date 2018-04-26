@@ -36,7 +36,7 @@
                 <TextField fx:id="kTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="pTextField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 
-                <Button text="Start" onAction="#startSimulation" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                <Button fx:id="startStopBtn" text="Start" onAction="#startSimulation" GridPane.columnIndex="1" GridPane.rowIndex="4"
                         prefWidth="${mTextField.width}"/>
             </GridPane>
 
