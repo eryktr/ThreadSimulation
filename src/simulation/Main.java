@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Responsible for showing the main program window.
+ * @author Eryk Trzeciakiewicz
+ */
 public class Main extends Application {
 
     @Override

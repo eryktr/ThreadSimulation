@@ -8,6 +8,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * This class is responsible for the direct communication with the program window. It provides methods initializing, running
+ * and updating the simulation.
+ * @author Eryk Trzeciakiewicz
+ */
 public class Controller
 {
     @FXML
@@ -22,6 +27,10 @@ public class Controller
     private AnimationThread[][] threads;
     private boolean continueSimulation;
 
+    /**
+     * The thread class responsible for controlling the simulation. One thread will be generated for every
+     * field on the board, and so the program will run the total of n x m threads.
+     */
     private class AnimationThread extends Thread
     {
         private int row, column;
@@ -47,6 +56,11 @@ public class Controller
             }
         }
 
+        /**
+         * The constructor of the Animation Thread
+         * @param row the row of the corresponding square
+         * @param column the column of the corresponding square
+         */
         public AnimationThread(int row, int column)
         {
             this.row = row;
@@ -54,6 +68,10 @@ public class Controller
         }
     }
 
+    /**
+     * Starts the simulation, namely: initializes the fields responsible for it, draws the board and updates
+     * simulation information.
+     */
     public void startSimulation()
     {
         initializeFields();
@@ -61,6 +79,10 @@ public class Controller
         simulate();
     }
 
+    /**
+     * Stops the simulation - cancels all running threads, erases the board and enables the user
+     * to start it once more.
+     */
     public void stopSimulation()
     {
         continueSimulation = false;
@@ -71,13 +93,17 @@ public class Controller
         simulationGridPane.getChildren().clear();
     }
 
+    /**
+     * This method sets up the simulation board. Draws n x m squares, calculates their height based on the input information
+     * and creates and populates two 2-dimensional arrays - containing squares and containing threads.
+     */
     public void initializeBoard()
     {
         Rectangle[][] squares = new Rectangle[n][m];
         AnimationThread[][] threads = new AnimationThread[n][m];
         final double height = simulationGridPane.getHeight() - n * simulationGridPane.getVgap();
         final double divisor = Math.max(m, n);
-        final double side = height/divisor;
+        final double side = height / divisor;
 
         for (int row = 0; row < n; row++)
         {
@@ -96,6 +122,9 @@ public class Controller
         startStopBtn.setOnAction(event -> stopSimulation());
     }
 
+    /**
+     * Initializes the fields in Controller class
+     */
     public void initializeFields()
     {
         continueSimulation = true;
@@ -105,6 +134,9 @@ public class Controller
         probability = Utility.doubleFromTextField(pTextField);
     }
 
+    /**
+     * Runs all the threads in the AnimationThread[][] array.
+     */
     public synchronized void simulate()
     {
         for (AnimationThread[] threadArray : threads)
