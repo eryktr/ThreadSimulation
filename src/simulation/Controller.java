@@ -44,7 +44,7 @@ public class Controller
                 {
                     Rectangle currentSquare = squares[row][column];
                     int threshold = (int) (probability * 1000);
-                    int randomNumber = Utility.getRandomNumber(1000);
+                    int randomNumber = Utility.getRandomNumber(1000) + 1;
                     Color newColor = (randomNumber <= threshold) ? (Utility.getRandomColor()) : Utility.getAverageColor(currentSquare, squares, n, m, row, column);
                     Platform.runLater(() -> currentSquare.setFill(newColor));
                     wait((long) (speed * (0.5 + Utility.getRandom())));
@@ -102,7 +102,10 @@ public class Controller
         Rectangle[][] squares = new Rectangle[n][m];
         AnimationThread[][] threads = new AnimationThread[n][m];
         final double height = simulationGridPane.getHeight() - n * simulationGridPane.getVgap();
-        final double divisor = Math.max(m, n);
+        final double min, max;
+        min = Math.min(m, n);
+        max = Math.max(m, n);
+        final double divisor = (height/min * n < simulationGridPane.getHeight() - n * simulationGridPane.getVgap() ? min : max);
         final double side = height / divisor;
 
         for (int row = 0; row < n; row++)

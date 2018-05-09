@@ -43,9 +43,9 @@ public class Utility
      */
     public static Color getRandomColor()
     {
-        int red = random.nextInt(255);
-        int green = random.nextInt(255);
-        int blue = random.nextInt(255);
+        int red = random.nextInt(256);
+        int green = random.nextInt(256);
+        int blue = random.nextInt(256);
         return Color.rgb(red, green, blue);
     }
 

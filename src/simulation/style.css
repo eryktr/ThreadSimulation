@@ -11,8 +11,8 @@
 #simulationGridPane
 {
 
-    -fx-vgap: 10px;
-    -fx-hgap: 10px;
+    -fx-vgap: 2px;
+    -fx-hgap: 2px;
 }
 
 #parametersLabel
